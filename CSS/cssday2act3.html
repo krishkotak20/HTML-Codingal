@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<h1>Messi</h1>
+<style>
+    
+body {
+    background-color:blueviolet;
+    width:200px;
+    height:200px;
+    animation: spin 2s linear infinite;
+    animation-name: football;
+    animation-duration: inf;
+    background-image: url("Messi.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+@keyframes football{
+0% {background-color: rgb(209, 29, 38);}
+10% {background-color: rgb(243, 189, 10);}
+30% {background-color: rgb(238, 255, 0);}
+50% {background-color: #1be700;}
+70% {background-color: blue;}
+90% {background-color: indigo;}
+100% {background-color: violet;}
+}
+<body>
+    <div>
+        Animation Block
+    </div>
+</style>
+</body>
+</html>
