@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial',sans-serif;
+    background-color: #0c3a7e;
+    COLOR: #c9d1d9;
+    align-items: center;
+    justify-content: flex-start;
+}
+h1{
+    color: #58A6FF;
+    align-items: center;
+        justify-content: flex-start;
+}
+/* Attribute Selector */
+
+a {
+
+    color: #d2d9e0;
+    align-items: center;
+        justify-content: flex-start;
+
+    text-decoration: none;
+
+}
+
+a:hover {
+
+    color: #ff1100;
+
+}
+
+/* Child Selector */
+
+ul>li {
+
+    font-weight: bold;
+
+}
+
+/* Sibling Selector */
+
+h1+p {
+
+    background-color: #1c57a8;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+}
+
+/* :hover Pseudo-class */
+
+ul li:hover {
+
+    color: #4F8CC9;
+
+}
+
+/* :nth-child(n) Pseudo-class */
+
+ul li:nth-child(3) {
+
+    background-color: #21262D;
+
+}
+
+/* :not(selector) Pseudo-class */
+
+p:not(:first-of-type) {
+
+    text-decoration: underline;
+
+}
+
+/* ::before Pseudo-element */
+
+ul li::before {
+
+    content: "🚀 ";
+
+}
+
+/* ::after Pseudo-element */
+
+a::after {
+
+    content: " 🌌";
+
+}
+
+/* ::first-letter Pseudo-element */
+
+p::first-letter {
+
+    font-size: 200%;
+
+    color: #FF7B72;
+
+}
