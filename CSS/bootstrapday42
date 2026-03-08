@@ -15,13 +15,17 @@
             <p>football is great for fitness fun and foot eye coordination,it is very beneficial.</p>
         </div>
     </div>
-    <div class="contaienr mt-3">
-              <h2>buttons</h2>
-            <button type="button" class="btn btn-primary">Primary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-success">Success</button>
-            <button type="button" class="btn btn-warning">Warning</button>
-            <button type="button" class="btn btn-danger">Danger</button>
+    <div class="container">
+              <h2>contextual badges</h2>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-secondary">Secondary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-warning">Warning</span>
+            <span class="badge badge-danger">Danger</span>
+            <span class="badge badge-info">info</span>
+            <span class="badge badge-light">light</span>
+            <span class="badge badge-dark">dark</span>
+
 
     </div>
 </body>
