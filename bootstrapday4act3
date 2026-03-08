@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body style="text-align: center;">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 style="color: aquamarine;">football</h1>
+            <p>football is great for fitness fun and foot eye coordination,it is very beneficial.</p>
+        </div>
+    </div>
+    <div class="container">
+        <h2>notifications</h2>
+        <button type="button" class="btn btn-primary">notificatons <span class="badge badge-light">2</button></span>
+        <h2>messages</h2>
+        <div class="container"></div><br>
+        <button type="button" class="btn btn-secondary">messages <span class="badge badge-info">2</button></span>
+        <h2>urgent</h2>
+    </div>
+    <div class="container"></div><br>
+    <button type="button" class="btn btn-success">urgent<span class="badge badge-dark">2</button></span>
+    <h2>news</h2>
+    <div class="container"></div><br>
+    <button type="button" class="btn btn-warning">news<span class="badge badge-success">2</button></span>
+</body>
+
+</html>
