@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="id1"></p>   
+<p id="id2"></p>
+<p id="id3"></p>
+<script>
+    var a = 10 // global variable
+    function f1(){
+        var b = 5; // local variable
+        return a*b;
+    }
+    document.getElementById("id1").innerHTML = f1();
+    document.getElementById("id2").innerHTML = a * 10;
+    document.getElementById("id3").innerHTML = b * 10; // no output
+</script>
+</body>
+</html>
