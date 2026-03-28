@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //method
+        var name= "football"
+         document.write(name.toUpperCase());
+          document.write("<br>");
+           document.write(name.toLowerCase());
+             document.write("<br>");
+               document.write("name starts with u : "+ name.startsWith('u'));
+        
+
+
+
+
+
+        var str1 = "i love football";
+        var str2 = new RegExp("football")
+        var result = str2.test(str1);
+        document.write("<br>");
+        document.write(result);
+        document.write("<br>");
+        
+        let a =str1.replace(/football/i, "basketball");
+        document.write(a);
+        document.write("<br>");
+
+        var x = 7.97645256756789
+         document.write(Math.floor(x))
+          document.write("<br>");
+        var y = Math.random()
+         document.write(y)
+    </script>
+
+
+</body>
+</html>
