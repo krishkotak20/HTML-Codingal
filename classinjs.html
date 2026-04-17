@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Inheritance Fixed</title>
+</head>
+
+<body>
+
+    <h2>JavaScript Class Inheritance</h2>
+
+    <p id="details"></p>
+    <p id="greetings"></p>
+
+    <script>
+        // parent class
+        class Student {
+            constructor(name) {
+                this.studentName = name;
+            }
+
+            present() {
+                return "Student: " + this.studentName;
+            }
+
+            static hello() {
+                return "Hello from the Student class!";
+            }
+        }
+
+        // child class
+        class Grade extends Student {
+            constructor(name, grade) {
+                super(name);
+                this.studentGrade = grade;
+            }
+
+            show() {
+                return this.present() + ", Grade: " + this.studentGrade;
+            }
+        }
+
+        // create object
+        let myStudent = new Grade("Tina", "Grade 6");
+
+        // output
+        document.getElementById("details").innerHTML = myStudent.show();
+        document.getElementById("greetings").innerHTML = Student.hello();
+    </script>
+
+</body>
+
+</html>
