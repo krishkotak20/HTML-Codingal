@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id1"></h1>
+    <p id="id2"></p>
+    <p id="id3"></p>
+    <p id="id4"></p>
+    <p id="id5"></p>
+    <script>
+        var num = [4,7,75]
+        document.getElementById("id1").innerHTML = num
+        function f1(number){
+            return number *100;
+        }
+        var new_num = num.map(number => number * 2);
+        document.getElementById("id2").innerHTML = new_num;
+
+        var new_num2 =num.map(number=> number * 2);
+        document.getElementById("id3").innerHTML = new_num2;
+        
+
+        var new_num2 = num.sort((a,b) => a-b);
+           document.getElementById("id4").innerHTML = new_num2;
+    </script>
+</body>
+</html>

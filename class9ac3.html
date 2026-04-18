@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,4 +55,62 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Class Static Methods</title>
+</head>
+
+<body>
+
+    <h2>JavaScript Class Static Methods</h2>
+
+    <p>A static method is created with the "static" keyword, and you can only call the method on the class itself.</p>
+
+    <p id="hello"></p>
+    <p id="hi"></p>
+    <p id="welcome"></p>
+
+    <script>
+
+        class Student {
+
+            constructor(name) {
+                this.studentName = name;
+            }
+
+            static hello() { // static method
+                return "Hello!!";
+            }
+
+            static welcome(x) {
+                return "Welcome " + x.studentName;
+            }
+
+            hi() {
+                return "Hi " + this.studentName;
+            }
+
+        }
+
+        let myname = new Student("Carol");
+
+        // Call 'hello()' on the class Student
+        document.getElementById("hello").innerHTML = Student.hello();
+
+        // Call 'hi()' on the 'myname' object
+        document.getElementById("hi").innerHTML = myname.hi();
+
+        // Call 'welcome()' with the object as parameter
+        document.getElementById("welcome").innerHTML = Student.welcome(myname);
+
+    </script>
+
+</body>
+
+>>>>>>> d40986d0f4c3a2712ce3cfb82fab7c0143d7c43a
 </html>
