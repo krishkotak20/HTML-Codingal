@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>enter a number and click OK</p>
+       <input id="id" type="number" min="100" max="900" required>
+        <button onclick="myFunction()">ok</button>
+        <p>it has to be a 3 digit number</p>
+
+    <p id="result"></p>
+    <script>
+        function myFunction() {
+        var inpobj = document.getElementById("id");
+        if (!inpobj.checkValidity()) {
+            document.getElementById("result").innerHTML = inpobj.validationMessage;
+        } else{
+            document.getElementById("result").innerHTML ="input ok";
+        }
+        }
+    </script>
+</body>
+
+</html>
