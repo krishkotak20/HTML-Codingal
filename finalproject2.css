@@ -1,0 +1,37 @@
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background: blueviolet;
+    font-family: 'Courier New', Courier, monospace;
+}
+.m-heading {
+    font-family: "Roboto Slab", serif;
+}
+
+.text-white {
+    color:antiquewhite
+}
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('fballpng.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+.main_row {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_row h1 {
+    font-size: 5rem;
+}
+
+.main_row img {
+    width: auto;
+    height: 100vh;
+}
