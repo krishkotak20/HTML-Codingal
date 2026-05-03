@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: "Baloo Tamma 2", sans-serif;
+    background: aliceblue;
+}
+
+.navigation{
+    background: black;
+    border-top: 2px solid yellow;
+    padding: 12px 40px !important;
+}
+.brand-logo{
+    height: 26px;
+    width: auto;
+}
+
+.navigation-link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: aliceblue !important;
+}
+
+
+.navigation-link:hover {
+    color: yellow !important;
+}
