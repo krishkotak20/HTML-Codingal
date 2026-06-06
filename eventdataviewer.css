@@ -1,0 +1,110 @@
+< !DOCTYPE html><html><head><style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f7ff;
+    color: #222222;
+    text-align: center;
+}
+
+.event-card {
+    width: 520px;
+    background-color: white;
+    border: 3px solid #3b82f6;
+    border-radius: 18px;
+    margin: 40px auto;
+    padding: 25px;
+    box-shadow: 0 0 18px #93c5fd;
+}
+
+h1 {
+    color: #1d4ed8;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1e40af;
+}
+
+.info-box {
+    background-color: #eff6ff;
+    border: 2px dashed #60a5fa;
+    border-radius: 12px;
+    margin-top: 18px;
+    padding: 15px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+#status {
+    color: #16a34a;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#jsonOutput {
+    color: #7c2d12;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+
+
+function showLoadingMessage(message) {
+    document.getElementById("status").innerHTML=message;
+}
+
+// Promise function
+function fetchSchoolEventData(callback) {
+    callback("Loading school event data... Please wait.");
+
+    return new Promise(function(resolve) {
+            setTimeout(function() {
+                    let schoolEvent= {
+                        eventName: "Annual Science Fair",
+                        date: "25 August 2026",
+                        time: "10:00 AM", 
+                        venue: "School Auditorium",
+                        coordinator: "Ms. Priya",
+                        participants: 120,
+                        isRegistrationOpen: true
+                    }
+
+                    ;
+                    resolve(schoolEvent);
+                }
+
+                , 2000);
+        });
+}
+
+// async/await function
+async function showSchoolEvent() {
+    let eventData=await fetchSchoolEventData(showLoadingMessage);
+
+    document.getElementById("status").innerHTML="Event data loaded successfully!";
+
+    let jsonText=JSON.stringify(eventData);
+    let parsedEvent=JSON.parse(jsonText);
+
+    let eventMessage="";
+    eventMessage+="Event Name: "+parsedEvent.eventName+"<br>";
+    eventMessage+="Date: "+parsedEvent.date+"<br>";
+    eventMessage+="Time: "+parsedEvent.time+"<br>";
+    eventMessage+="Venue: "+parsedEvent.venue+"<br>";
+    eventMessage+="Coordinator: "+parsedEvent.coordinator+"<br>";
+    eventMessage+="Participants: "+parsedEvent.participants+"<br>";
+    eventMessage+="Registration Status: "+(parsedEvent.isRegistrationOpen ? "Open" : "Closed");
+
+    document.getElementById("eventDetails").innerHTML=eventMessage;
+    document.getElementById("jsonOutput").innerHTML=jsonText;
+}
+
