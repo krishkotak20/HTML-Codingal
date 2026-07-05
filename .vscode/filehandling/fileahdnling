@@ -1,0 +1,5 @@
+name = "Rahul"
+
+file = open("names.txt", "w")
+file.write("Rahul/n")
+file.close()
