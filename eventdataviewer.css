@@ -105,6 +105,5 @@ async function showSchoolEvent() {
     eventMessage+="Registration Status: "+(parsedEvent.isRegistrationOpen ? "Open" : "Closed");
 
     document.getElementById("eventDetails").innerHTML=eventMessage;
-    document.getElementById("jsonOutput").innerHTML=jsonText;
-}
+    document.getElementById("jsonOutput").innerHTML=json 
 
