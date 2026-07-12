@@ -1,0 +1,18 @@
+--- science-notes.txt ---
+Planets orbit the Sun
+The Moon causes tides
+Light is faster than sound
+Plants convert sunlight to food
+
+--- math-notes.txt ---
+Triangles have three sides
+Pi is 3.14
+Area equals length times width
+Prime numbers divide only by one
+
+--- imad.txt ---
+imad
+wasay
+ali
+hashim
+seleeem
