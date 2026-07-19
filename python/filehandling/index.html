@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Horizon Apex – Festival Build</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-root">
+        <div class="festival-header">
+            <div class="festival-wordmark"><span>Horizon</span> Apex</div>
+            <div class="festival-sub">Mediterranean Racing Festival • Web Build</div>
+        </div>
+
+        <!-- MAIN MENU -->
+        <div id="menu-screen" class="screen active">
+            <div class="menu-card">
+                <div class="menu-title">Festival Arrival</div>
+                <div class="menu-sub">
+                    Sun-drenched coastline, golden-hour towers, and a fleet of fictional hypercars.
+                    Pick your house and earn your crown.
+                </div>
+                <div class="menu-actions">
+                    <button class="btn" id="btn-enter-showroom">Enter Showroom</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- SHOWROOM -->
+        <div id="showroom-screen" class="screen">
+            <div class="showroom-left">
+                <div class="showroom-title">Showroom Garage</div>
+                <div class="showroom-tagline">
+                    Own a fleet of festival legends. Italian fire, wedge aggression, French opulence, Scandinavian
+                    extremes.
+                    Pick your machine for the next circuit.
+                </div>
+
+                <div class="showroom-cars">
+                    <div class="car-card" data-car-id="f80">
+                        <div class="car-color-pill car-color-rosso"></div>
+                        <div class="car-house">Cavallaro</div>
+                        <div class="car-name">F80</div>
+                        <div class="car-vibe">Rosso red grand tourer — pure Italian theater.</div>
+                    </div>
+
+                    <div class="car-card" data-car-id="aether">
+                        <div class="car-color-pill car-color-acid"></div>
+                        <div class="car-house">Veloti</div>
+                        <div class="car-name">Aether</div>
+                        <div class="car-vibe">Acid-green angular supercar — wedge aggression.</div>
+                    </div>
+
+                    <div class="car-card" data-car-id="royale">
+                        <div class="car-color-pill car-color-bleu"></div>
+                        <div class="car-house">BleuCiel</div>
+                        <div class="car-name">Royale</div>
+                        <div class="car-vibe">Deep Atlantic blue luxury hypercar.</div>
+                    </div>
+
+                    <div class="car-card" data-car-id="absolute">
+                        <div class="car-color-pill car-color-nord"></div>
+                        <div class="car-house">Nordmark</div>
+                        <div class="car-name">Absolute</div>
+                        <div class="car-vibe">Pearl-white ultra machine — extreme engineering.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showroom-right">
+                <div class="showroom-car-preview">
+                    <div class="preview-glow"></div>
+                    <div class="preview-floor"></div>
+                    <div class="preview-car-shape f80" id="preview-car-shape"></div>
+                    <div class="showroom-actions">
+                        <button class="btn secondary" id="btn-back-menu">Back</button>
+                        <button class="btn" id="btn-start-race">Blast into Festival</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RACE WORLD -->
+        <div id="race-screen" class="screen">
+            <div class="race-world">
+                <div class="road">
+                    <div class="road-lane"></div>
+                </div>
+
+                <div class="start-tower">Festival Start Tower</div>
+                <div class="festival-banner"></div>
+                <div class="festival-banner festival-banner-right"></div>
+ 
+                <div class="sea"></div>
+                <div class="cliffs"></div>
+                <div class="sea-bridge"></div>
+                <div class="lighthouse"></div>
+                <div class="villa"></div>
+
+                <div class="speed-pad"></div>
+                <div class="checkpoint">Checkpoint</div>
+
+                <div class="car-entity car-player car-f80" id="player-car"></div>
+
+                <div class="car-entity car-rival car-aether r1" id="rival1"></div>
+                <div class="car-entity car-rival car-royale r2" id="rival2"></div>
+                <div class="car-entity car-rival car-absolute r3" id="rival3"></div>
+
+                <div class="center-overlay" id="countdown-overlay">
+                    <div class="countdown" id="countdown-text">3</div>
+                </div>
+
+                <div id="hud">
+                    <div class="hud-top">
+                        <div class="hud-pill" id="hud-timer">Time: 00.0</div>
+                        <div class="hud-pill" id="hud-lap">Event: 1 / 3</div>
+                        <div class="hud-pill" id="hud-checkpoints">Checkpoint: 0 / 3</div>
+                    </div>
+
+                    <div class="hud-bottom-left">
+                        <div class="hud-speed" id="hud-speed">120<span> km/h</span></div>
+                        <div class="hud-gear" id="hud-gear">Gear 4</div>
+                    </div>
+
+                    <div class="hud-position" id="hud-position">
+                        <div class="hud-pill">Position: 4 / 4</div>
+                    </div>
+
+                    <div class="controls-hint">
+                        Controls: ← → steer • ↑ accelerate • ↓ brake • Space = boost pad surge
+                    </div>
+                </div>
+
+                <div class="result-panel" id="result-panel">
+                    <div class="result-card" id="result-card">
+                        <div class="result-title">Festival Result</div>
+                        <div class="result-sub" id="result-sub"></div>
+                        <div class="result-actions">
+                            <button class="btn" id="btn-next-race">Next Festival Race</button>
+                            <button class="btn secondary" id="btn-return-showroom">Return to Showroom</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOAD JS -->
+    <script src="forza.js"></script>
+
+</body>
+
+</html>

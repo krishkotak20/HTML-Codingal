@@ -1,0 +1,340 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #ffd9a3 0%, #1b2433 55%, #050814 100%);
+    color: #fff;
+    overflow: hidden;
+}
+
+#game-root {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* FESTIVAL BRANDING */
+.festival-header {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    z-index: 20;
+}
+
+.festival-wordmark {
+    font-size: 1.8rem;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.festival-wordmark span {
+    color: #ffd36b;
+}
+
+.festival-sub {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+}
+
+/* BUTTONS */
+.btn {
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.12rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffb347, #ff6b6b);
+    color: #111;
+    font-weight: 700;
+    box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 0.9rem 1.8rem rgba(0, 0, 0, 0.6);
+}
+
+.btn.secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* MENU SCREEN */
+#menu-screen {
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, #ffd9a3 0%, #1b2433 55%, #050814 100%);
+}
+
+.menu-card {
+    width: 420px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 1.4rem 2.4rem rgba(0, 0, 0, 0.9);
+}
+
+.menu-title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0.6rem;
+}
+
+.menu-sub {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.menu-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* SHOWROOM */
+#showroom-screen {
+    background: radial-gradient(circle at top, #ffd9a3 0%, #1b2433 55%, #050814 100%);
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+}
+
+.showroom-left {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.showroom-title {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.showroom-tagline {
+    font-size: 0.95rem;
+    max-width: 26rem;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.showroom-cars {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.car-card {
+    position: relative;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06)), rgba(0, 0, 0, )
+}
+
+#hud {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;3
+    font-size: 0.8rem;
+    z-index: 30;
+}
+
+.hud-top {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.hud-pill {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+}
+
+.hud-bottom-left {
+    position: absolute;
+    bottom: 1.2rem;
+    left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.hud-speed {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.hud-speed span {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-left: 0.2rem;
+}
+
+.hud-gear {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.hud-position {
+    position: absolute;
+    bottom: 1.2rem;
+    right: 1.5rem;
+}
+
+/* TRACK */
+#race-screen {
+    background-color: linear-gradient(to top, #050814 0%, #1b2433 40%, #ffd9a3 100%);
+    align-items: stretch;
+    justify-content: center;
+}
+
+.race-world {
+    position: relative;
+    flex: 1;
+    margin: 3rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: linear-gradient(to top, #0a101b 0%, #1b2433 40%, #ffd9a3 100%);
+    box-shadow: 0 1.4rem 2.4rem rgba(0, 0, 0, 0.9);
+}
+
+.start-tower {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 12%;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background-color: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.8);
+}
+
+.start-tower::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    border-radius: 999px;
+    border: 1px dashed rgba(255, 211, 107, 0.6);
+    opacity: 0.6;
+}
+
+.road {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    transform: translateX(-50%) skewX(-8deg);
+    background-color: linear-gradient(to bottom, #22252f 0%, #050814 100%);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.9);
+}
+
+.road-lane {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.8) 0,
+            rgba(255, 255, 255, 0.8) 20px,
+            transparent 20px,
+            transparent 40px);
+    background-size: 100% 40px;
+    animation: laneMove 0.6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes laneMove {
+    from {
+        background-position-y: 0;
+    }
+
+    to {
+        background-position-y: 40px;
+    }
+}
+
+.sea-bridge {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 10%;
+    border-radius: 1.5rem;
+    background-color: linear-gradient(to right, #22252f, #050814);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.9);
+}
+
+.sea {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    background-color: radial-gradient(circle at top, #4fb3ff 0%, #004477 40%, #00152b 100%);
+}
+
+.cliffs {
+    position: absolute;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    height: 15%;
+    background-color: linear-gradient(to top, #3b2b1b, #7b5b3b);
+    clip-path: polygon(0 100%, 0 40%, 20% 0, 40% 40%, 60% 0, 80% 40%, 100% 0, 100% 100%);
+    opacity: 0.9;
+}
+
+.lighthouse {
+    position: absolute;
+    right: 12%;
+    bottom: 30%;
+    width: 2.5%;
+    height: 18%;
+    background-color: linear-gradient(to top, #ffffff, #cfe7ff);
+    border-radius: 999px;
+}
