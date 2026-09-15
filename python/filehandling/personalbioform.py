@@ -128,4 +128,4 @@ result_label.grid(row=6, column=0, columnspan=2, pady=10)
 # PART 8 - RUN THE WINDOW
 # ------------------------------------------------
  
-window.mainloop()
+window.mainloop()#
