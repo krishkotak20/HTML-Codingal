@@ -73,6 +73,14 @@
         button:hover {
             background: #555;
         }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e9ffe9;
+            border-radius: 6px;
+            display: none;
+        }
     </style>
 </head>
 
@@ -81,35 +89,35 @@
         <h1>theme park survey</h1>
         <p>please tell us what you’d like in a theme park.</p>
 
-        <form>
+        <form id="surveyForm">
             <label for="age">your age (optional)</label>
             <input type="text" id="age" name="age" placeholder="e.g. 16">
 
             <label>favorite type of ride</label>
             <div class="options">
-                <label><input type="radio" name="ride_type" value="roller_coaster"> roller coasters</label>
-                <label><input type="radio" name="ride_type" value="water_rides"> water rides</label>
-                <label><input type="radio" name="ride_type" value="family_rides"> family rides</label>
-                <label><input type="radio" name="ride_type" value="thrill_rides"> extreme thrill rides</label>
+                <label><input type="radio" name="ride_type" value="roller coasters"> roller coasters</label>
+                <label><input type="radio" name="ride_type" value="water rides"> water rides</label>
+                <label><input type="radio" name="ride_type" value="family rides"> family rides</label>
+                <label><input type="radio" name="ride_type" value="extreme thrill rides"> extreme thrill rides</label>
             </div>
 
             <label for="theme">what theme would you like most?</label>
             <select id="theme" name="theme">
                 <option value="">select a theme</option>
-                <option value="fantasy">fantasy / magic</option>
-                <option value="space">space / sci‑fi</option>
-                <option value="adventure">adventure / jungle</option>
-                <option value="horror">horror / haunted</option>
-                <option value="cartoon">cartoon / movies</option>
+                <option value="fantasy / magic">fantasy / magic</option>
+                <option value="space / sci‑fi">space / sci‑fi</option>
+                <option value="adventure / jungle">adventure / jungle</option>
+                <option value="horror / haunted">horror / haunted</option>
+                <option value="cartoon / movies">cartoon / movies</option>
             </select>
 
             <label>most important things in a theme park</label>
             <div class="options">
                 <label><input type="checkbox" name="important" value="safety"> safety</label>
-                <label><input type="checkbox" name="important" value="food"> good food</label>
-                <label><input type="checkbox" name="important" value="price"> affordable tickets</label>
-                <label><input type="checkbox" name="important" value="clean"> clean and tidy</label>
-                <label><input type="checkbox" name="important" value="shows"> shows & events</label>
+                <label><input type="checkbox" name="important" value="good food"> good food</label>
+                <label><input type="checkbox" name="important" value="affordable tickets"> affordable tickets</label>
+                <label><input type="checkbox" name="important" value="clean and tidy"> clean and tidy</label>
+                <label><input type="checkbox" name="important" value="shows & events"> shows & events</label>
             </div>
 
             <label for="wish">describe your dream theme park</label>
@@ -117,7 +125,36 @@
 
             <button type="submit">submit</button>
         </form>
+
+        <div id="result"></div>
     </div>
+
+    <script>
+        document.getElementById("surveyForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const age = document.getElementById("age").value;
+            const ride = document.querySelector("input[name='ride_type']:checked")?.value || "none selected";
+            const theme = document.getElementById("theme").value || "none selected";
+
+            const important = [...document.querySelectorAll("input[name='important']:checked")]
+                .map(i => i.value)
+                .join(", ") || "none selected";
+
+            const wish = document.getElementById("wish").value;
+
+            const resultBox = document.getElementById("result");
+            resultBox.style.display = "block";
+            resultBox.innerHTML = `
+                <h3>Your Response:</h3>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Favorite Ride:</strong> ${ride}</p>
+                <p><strong>Preferred Theme:</strong> ${theme}</p>
+                <p><strong>Important Factors:</strong> ${important}</p>
+                <p><strong>Your Dream Theme Park:</strong><br>${wish}</p>
+            `;
+        });
+    </script>
 </body>
 
 </html>
